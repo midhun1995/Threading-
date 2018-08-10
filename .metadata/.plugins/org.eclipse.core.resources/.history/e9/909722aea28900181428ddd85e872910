@@ -1,0 +1,56 @@
+package com.hexa.demo;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream; 
+
+interface Validate {
+	abstract boolean check(Emp emp);
+}
+class Emp {
+	String name;
+	int rating;
+	double salary;
+	Emp(String nm, int rating, double sal) {
+		this.name = nm;
+		this.rating = rating;
+		this.salary = sal;
+	}
+	public String getName() { 
+			return name; 
+	}
+	public int getRating() { 
+		return rating; 
+	}
+	public double getSalary() { 
+		return salary; 
+	}
+	public String toString() {
+	return name + ":" + rating + ":" + salary;
+	}
+}
+class FilterName {
+	public static void main(String args[]) {
+		Emp e1 = new Emp("Shreya", 5, 999);
+		Emp e2 = new Emp("Paul", 4, 1234);
+		Emp e3 = new Emp("Harry", 5, 876);
+		Emp e4 = new Emp("Selvan", 1, 2769);
+		ArrayList<Emp> empArrList = new ArrayList<>();
+		empArrList.add(e1);
+		empArrList.add(e2);
+		empArrList.add(e3);
+		empArrList.add(e4);
+		Predicate<Emp> position=e->e.getRating()<5;
+		position.test(e4);
+		Validate v = e->e.getRating()>=5;
+		filter(empArrList,v);
+		
+	}
+
+	private static void filter(ArrayList<Emp> empArrList, Validate v) {
+		for(Emp e:empArrList) {
+			if(v.check(e))
+				System.out.println(e);
+		}
+	}
+}

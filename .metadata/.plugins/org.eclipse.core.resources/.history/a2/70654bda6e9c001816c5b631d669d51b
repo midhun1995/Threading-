@@ -1,0 +1,40 @@
+package demo.midhun;
+
+class Model {
+	int num=0;
+
+	public void set(int num) {
+		this.num=num;
+	}
+
+	public int get() {
+		return num;
+	}
+}
+
+
+class Producer implements Runnable {
+	Model m;
+	
+	public Producer(Model m) {
+		super();
+		this.m = m;
+		Thread t1=new Thread("Producer");
+	}
+
+	public void run() {
+		int count=0;
+		while(true) {
+			m.set(count++);
+			try {Thread.sleep(1000);} catch(Exception e) {}
+		}
+	}
+}
+class Consumer implements Runnable {
+	public void run() {
+		
+	}
+}
+public class ProducerConsumer {
+
+}

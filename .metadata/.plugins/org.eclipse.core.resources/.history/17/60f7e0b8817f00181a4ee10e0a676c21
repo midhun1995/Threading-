@@ -1,0 +1,19 @@
+package com.hexa.demo;
+class Exam {
+String name;
+public Exam(String name) {
+this.name = name;
+System.out.println(name);
+}
+}
+class ObjectLife1 {
+public static void main(String args[]) {
+Exam myExam = new Exam("PHP");
+myExam = null;
+myExam = new Exam("SQL");
+myExam = new Exam("Java");
+Exam yourExam = new Exam("PMP");
+yourExam = myExam;
+System.out.println(yourExam.toString());
+}
+}

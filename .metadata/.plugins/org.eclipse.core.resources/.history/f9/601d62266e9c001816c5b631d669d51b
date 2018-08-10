@@ -1,0 +1,28 @@
+package demo.midhun;
+
+class Model {
+	int num=0;
+
+	public void set(int num) {
+		this.num=num;
+	}
+
+	public int get() {
+		return num;
+	}
+}
+
+
+class Producer implements Runnable {
+	public void run() {
+		
+	}
+}
+class Consumer implements Runnable {
+	public void run() {
+		
+	}
+}
+public class ProducerConsumer {
+
+}

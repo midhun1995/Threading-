@@ -1,0 +1,21 @@
+package com.hexa.demo;
+
+public class Employee{
+	String empId;
+	String name;
+}
+interface Manager {
+	public static final String mname ="Static Manager";
+	abstract void manage();
+}
+
+public class Organisation extends Employee implements Manager {
+	public void manage() {
+		Organisation org=new Organisation();
+		System.out.println(org.name +"is managing");
+	}
+	public static void main(String []args) {
+		Employee o = new Organisation();
+		((Manager) o).manage();
+	}
+}

@@ -1,0 +1,30 @@
+package demo.midhun;
+
+public class Hello implements Runnable {
+	public void run() {
+		System.out.println("Hello Thread running");
+		try {
+			Thread.sleep(500);
+		}
+		catch(Exception e) {
+			
+		}
+	}
+}
+public class Hi implements Runnable {
+	public void run() {
+		System.out.println("Hi Thread running!");
+		try {
+			Thread.sleep(500);
+		}
+		catch(Exception e) {
+			
+		}
+	}
+}
+
+public class ThradMain {
+	public static void main( String [] args) {
+		
+	}
+}
